@@ -1,6 +1,6 @@
 streamlit
 watchdog
-sklearn
+scikit-learn
 matplotlib
 pandas
 xgboost
