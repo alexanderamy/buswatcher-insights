@@ -3,6 +3,6 @@ watchdog
 scikit-learn
 matplotlib
 pandas
-xgboost
+xgboost==1.5.0
 seaborn
 plotly
