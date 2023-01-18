@@ -286,11 +286,11 @@ def st_demo_weather():
         'Ground Truth':'gt',
         'Prediction':'pred',
     }
-    data = st.selectbox("Dataset", options=['Test', 'Train'])
+    data = st.selectbox("Dataset", options=['Test', 'Train'], key=1)
     data = data.lower()
-    errors = st.selectbox("Errors", options=['Large', 'Small', 'All'])
+    errors = st.selectbox("Errors", options=['Large', 'Small', 'All'], key=2)
     errors = errors.lower()
-    n = st.selectbox("Number", options=[5000, 1000, 500, 100, 50])
+    n = st.selectbox("Number", options=[5000, 1000, 500, 100, 50], key=3)
     fig_weekday, fig_weekend, fig_datetime = st_gt_pred_scatter(eval_xg_bus_weather, data=data, plot='simple', errors=errors, n=n)
     st.write(fig_weekday)
     st.write(fig_weekend)
@@ -304,13 +304,13 @@ def st_demo_weather():
         'Ground Truth':'gt',
         'Prediction':'pred',
     }
-    data = st.selectbox("Dataset", options=['Test', 'Train'])
+    data = st.selectbox("Dataset", options=['Test', 'Train'], key=4)
     data = data.lower()
     plot = st.selectbox("Plot By", options=['Stop', 'Hour', 'DateTime'])
     plot = plot.lower()
-    errors = st.selectbox("Errors", options=['Large', 'Small', 'All'])
+    errors = st.selectbox("Errors", options=['Large', 'Small', 'All'], key=5)
     errors = errors.lower()
-    n = st.selectbox("Number", options=[5000, 1000, 500, 100, 50])
+    n = st.selectbox("Number", options=[5000, 1000, 500, 100, 50], key=6)
     y_axis = st.selectbox("Y Axis", options=['Ground Truth', 'Prediction'])
     y_axis = y_axis_dict[y_axis]
     fig_weekday, fig_weekend, fig_datetime = st_gt_pred_scatter(eval_xg_bus_weather, data=data, plot=plot, errors=errors, n=n, y_axis=y_axis, overlay_weather=True)
